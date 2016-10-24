@@ -1,0 +1,30 @@
+<div class="row">
+  <form class="col-md-offset-3 col-md-6" name="form" ng-submit="loginCtrl.doLogin()" novalidate>
+    <div class="input-group">
+      <label>First name:</label>
+      <input name="firstName" type="text" ng-model="loginCtrl.user.firstName" required><br>
+      <div ng-show="form.$submitted || form.firstName.$touched">
+        <div ng-show="form.firstName.$error.required">Tell us your first name.</div>
+      </div>
+    </div>
+    <label>Second name:</label>
+    <input name="secondName" type="text" ng-model="loginCtrl.user.secondName" required><br>
+    <div ng-show="form.$submitted || form.secondName.$touched">
+      <div ng-show="form.secondName.$error.required">Tell us your second name.</div>
+    </div>
+    <label>Email Address:</label>
+    <input name="email" type="email" ng-model="loginCtrl.user.email" required ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"><br>
+    <div ng-show="form.$submitted || form.email.$touched">
+      <div ng-show="form.email.$error.required">Tell us your email address.</div>
+    </div>
+    <label>Phone Number:</label>
+    <input name="phone" type="tel" ng-model="loginCtrl.user.phone" required><br>
+    <div ng-show="form.$submitted || form.phone.$touched">
+      <div ng-show="form.phone.$error.required">Tell us your phone num.</div>
+    </div>
+    <label>Your favorite dish number:</label><br>
+    <input type="text" placeholder="dish number" ng-model="loginCtrl.user.favoriteShortName"><br>
+    <div ng-show="loginCtrl.showError">No such menu number exists</div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
